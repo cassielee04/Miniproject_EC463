@@ -105,13 +105,14 @@ app.post('/registered', function(req,res){
                 else{
                     emails.find({}, function(err, users){
                     var userMap = {};
+                    var cassieMap = {};
                     users.forEach(function(user){
                     
                     
                     userMap[user.email] = user;
                     //console.log(userMap);
                     if(txtEmail !== user)
-                    {
+                    {   
                         newemail.email = txtEmail;
                         newemail.save().then((doc1)=>{
                         
@@ -122,7 +123,7 @@ app.post('/registered', function(req,res){
                     }
                         
                     });
-                    console.log('check out emails');
+                    console.log('check out emails, cassie change');
                     })
                 }       
             });
