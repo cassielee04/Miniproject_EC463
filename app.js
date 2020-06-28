@@ -119,12 +119,12 @@ app.post('/registered', function(req,res){
                     })
                 }       
             });
-            for(let i = 0 ; i < 10 ; i++)
+            for(let i = 0 ; i < 20 ; i++)
             {   
                 
                 dateDay = dateDay + 1;
                 var parsed = dateYear + '-' + dateMonth + '-' + dateDay;
-                var newobj = new obj();   
+                var newobj1 = new obj1();   
                 newobj.email = txtEmail;
                 newobj.livingroom.push({temp_liv:Math.round(temp_gen()),
                     hum_liv:Math.round(hum_gen()),time:parsed});
