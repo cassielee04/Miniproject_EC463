@@ -97,10 +97,17 @@ app.post('/registered', function(req,res){
                     });
                     
                 }
+                
+                
+                
+                
+                
                 else{
                     emails.find({}, function(err, users){
                     var userMap = {};
                     users.forEach(function(user){
+                    
+                    
                     userMap[user.email] = user;
                     //console.log(userMap);
                     if(txtEmail !== user)
