@@ -97,14 +97,22 @@ app.post('/registered', function(req,res){
                     });
                     
                 }
+                
+                
+                
+                
+                
                 else{
                     emails.find({}, function(err, users){
                     var userMap = {};
+                    var cassieMap = {};
                     users.forEach(function(user){
+                    
+                    
                     userMap[user.email] = user;
                     //console.log(userMap);
                     if(txtEmail !== user)
-                    {
+                    {   
                         newemail.email = txtEmail;
                         newemail.save().then((doc1)=>{
                         
@@ -115,16 +123,16 @@ app.post('/registered', function(req,res){
                     }
                         
                     });
-                    console.log('check out emails');
+                    console.log('check out emails, cassie change');
                     })
                 }       
             });
-            for(let i = 0 ; i < 10 ; i++)
+            for(let i = 0 ; i < 20 ; i++)
             {   
                 
                 dateDay = dateDay + 1;
                 var parsed = dateYear + '-' + dateMonth + '-' + dateDay;
-                var newobj = new obj();   
+                var newobj1 = new obj1();   
                 newobj.email = txtEmail;
                 newobj.livingroom.push({temp_liv:Math.round(temp_gen()),
                     hum_liv:Math.round(hum_gen()),time:parsed});
@@ -298,9 +306,9 @@ app.get('/signup',(req,res)=>{
 
 //Listen to auth state changes
 
-app.get('/signin',(req,res)=>{    
+app.set('/signin',(req,res)=>{    
     //res.sendFile('home.html',{root: path.join(__dirname,'./files/html')})
-    console.log('Im Here');
+    console.log('Im Here changes');
     res.render(__dirname + '/files/html/index2.pug');
 });
 
