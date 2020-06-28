@@ -299,9 +299,9 @@ app.get('/signup',(req,res)=>{
 
 //Listen to auth state changes
 
-app.get('/signin',(req,res)=>{    
+app.set('/signin',(req,res)=>{    
     //res.sendFile('home.html',{root: path.join(__dirname,'./files/html')})
-    console.log('Im Here');
+    console.log('Im Here changes');
     res.render(__dirname + '/files/html/index2.pug');
 });
 
